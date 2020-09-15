@@ -3,8 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import home from "./pages/home";
-import signup from "./pages/signup";
-import login from "./pages/login";
+import weatherAPI from "./pages/weatherAPI";
 import Navbar from "./components/Navbar";
 
 import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
@@ -69,6 +68,7 @@ class App extends Component {
               <div className="container">
                 <Switch>
                   <Route exact path="/" component={home} />
+                  <Route exact path="/weatherAPI" component={weatherAPI} />
                 </Switch>
               </div>
             </Router>
@@ -88,7 +88,9 @@ export default App;
 
 /*
     <Route exact path="/login" component={login} />
-    <Route exact path="/signup" component={signup} />
+    <Route exact path="/weatherAPI" component={weatherAPI} />
+    link for the SSO setup
+    https://www.youtube.com/watch?v=zq0TuNqV0Ew&feature=youtu.be&fbclid=IwAR3NQX1Tr-3sBymS57S-88fsbbOCwJ8l9sO41qX4W9EqtayXmYF5JR7Nk3c
 
 
 */

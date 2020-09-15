@@ -37,6 +37,11 @@
   margin: 0 50 0 auto;
 }
 
+.photo {
+  height: 250px;
+  width: 250px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

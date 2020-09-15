@@ -9,6 +9,9 @@ import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
+import firebase from "firebase";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+
 class Navbar extends Component {
   render() {
     return (
@@ -20,11 +23,11 @@ class Navbar extends Component {
           <Button color="inherit" component={Link} to="/">
             Home
           </Button>
-          <Button color="inherit" component={Link} to="/login">
-            Login
+          <Button color="inherit" component={Link} to="/weatherAPI">
+            City Weather
           </Button>
-          <Button color="inherit" component={Link} to="/signup">
-            Signup
+          <Button color="inherit" onClick={() => firebase.auth().signOut()}>
+            Sign Out
           </Button>
         </Toolbar>
       </AppBar>
@@ -32,3 +35,9 @@ class Navbar extends Component {
   }
 }
 export default Navbar;
+
+/*
+          <Button color="inherit" component={Link} to="/signup">
+            Signup
+          </Button>
+*/

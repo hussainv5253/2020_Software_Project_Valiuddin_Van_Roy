@@ -1,6 +1,10 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
+import firebase from "firebase";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import "../App.css";
 
 export class home extends Component {
   state = {
@@ -18,14 +22,22 @@ export class home extends Component {
   */
   render() {
     return (
-      <Grid container spacing={2}>
-        <Grid items={8} xs={8}>
-          <p>Rooms...</p>
+      <div>
+        <Grid container spacing={2}>
+          <Grid items={8} xs={8}>
+            <p>Rooms...</p>
+          </Grid>
+          <Grid items={4} xs={4}>
+            <p>Profile...</p>
+            <img
+              className="photo"
+              alt="profile picture"
+              src={firebase.auth().currentUser.photoURL}
+            />
+            <h3>Welcome {firebase.auth().currentUser.displayName}</h3>
+          </Grid>
         </Grid>
-        <Grid items={4} xs={4}>
-          <p>Profile...</p>
-        </Grid>
-      </Grid>
+      </div>
     );
   }
 }

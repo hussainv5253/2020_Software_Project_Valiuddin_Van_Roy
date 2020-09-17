@@ -1,0 +1,1 @@
+This readme covers the backend of the application

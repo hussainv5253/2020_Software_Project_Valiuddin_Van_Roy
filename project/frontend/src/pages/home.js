@@ -41,12 +41,13 @@ export class home extends Component {
     }
   };
 
+  //need to implement the remove button which im not sure how to implement yet
+
   render() {
     return (
       <div>
         <Grid container spacing={2}>
           <Grid items={8} xs={8}>
-            <p>Rooms...</p>
             <Room
               roomname={this.state.room}
               templevel={this.state.temp}

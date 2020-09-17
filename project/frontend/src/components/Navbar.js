@@ -13,9 +13,7 @@ class Navbar extends Component {
     return (
       <AppBar>
         <Toolbar className="nav-container">
-          <IconButton edge="start" color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
+          <IconButton edge="start" color="inherit" aria-label=""></IconButton>
           <Button color="inherit" component={Link} to="/">
             Home
           </Button>

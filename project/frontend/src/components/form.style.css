@@ -1,22 +1,26 @@
-form {
+.form {
   position: absolute center;
   bottom: 0;
   justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url("../images/Wallpaper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-form input[name="city"],
-form input[name="country"] {
+.form input[name="city"],
+.form input[name="country"] {
   color: black;
   border: none;
   justify-content: center;
   border-bottom: 2px solid white;
   border-radius: 0;
+  background-color: transparent;
 }
 
-form input:focus {
+.form input:focus {
   background-color: transparent;
   box-shadow: none !important;
   border: none;
@@ -24,7 +28,7 @@ form input:focus {
   justify-content: center;
 }
 
-form input .container::-webkit-input-placeholder {
+.form input .container::-webkit-input-placeholder {
   color: white !important;
   justify-content: center;
 }

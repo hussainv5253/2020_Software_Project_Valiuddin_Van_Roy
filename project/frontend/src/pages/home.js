@@ -3,36 +3,70 @@ import ReactDOM from "react-dom";
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
 import firebase from "firebase";
+import AddRoom from "../components/AddRoom";
+import Room from "../components/room";
+import "../App.css";
 
 export class home extends Component {
-  state = {
-    room: null,
-  };
-  /*componentDidMount() {
-    Info about this can be found on https://youtu.be/m_u6P5k0vP0 timestamp 4:51:30
-    basically get info from firebase
-    axios.get(firebase room function url);
-      .then(res => {
-        this.setState({
-        rooms:res.data
-      })
+  constructor() {
+    super();
+    this.state = {
+      room: undefined,
+      temp: undefined,
+      humidity: undefined,
+      serial: undefined,
+      error: false,
+    };
   }
-  */
+
+  getData = async (e) => {
+    e.preventDefault();
+    const s_no = e.target.elements.Serial.value;
+
+    if (s_no) {
+      //get data from firebase
+      const temp_response = 30;
+      const humidity_response = 15;
+      const room_response = "My Room";
+
+      this.setState({
+        temp: temp_response,
+        humidity: humidity_response,
+        room: room_response,
+        serial: s_no,
+        error: false,
+      });
+    } else {
+      this.setState({ error: true });
+    }
+  };
+
   render() {
     return (
       <div>
         <Grid container spacing={2}>
           <Grid items={8} xs={8}>
             <p>Rooms...</p>
+            <Room
+              roomname={this.state.room}
+              templevel={this.state.temp}
+              humiditylevel={this.state.humidity}
+              serialnumber={this.state.serial}
+            />
+            <AddRoom loadsensor={this.getData} error={this.state.error}>
+              console.log(loadsensor);
+            </AddRoom>
           </Grid>
           <Grid items={4} xs={4}>
-            <p>Profile...</p>
-            <img
-              className="photo"
-              alt="profile picture"
-              src={firebase.auth().currentUser.photoURL}
-            />
-            <h3>Welcome {firebase.auth().currentUser.displayName}</h3>
+            <div className="App">
+              <img
+                className="photo"
+                alt="profile picture"
+                src={firebase.auth().currentUser.photoURL}
+              />
+              <h3 className="mt-0">Welcome</h3>
+              <h3>{firebase.auth().currentUser.displayName}</h3>
+            </div>
           </Grid>
         </Grid>
       </div>

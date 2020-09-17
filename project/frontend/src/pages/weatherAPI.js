@@ -102,7 +102,7 @@ export class weatherAPI extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="form">
         <Weather
           cityname={this.state.city}
           countryname={this.state.country}

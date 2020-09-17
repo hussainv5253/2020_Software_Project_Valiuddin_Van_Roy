@@ -6,11 +6,7 @@ import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
-import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-
 import firebase from "firebase";
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 class Navbar extends Component {
   render() {

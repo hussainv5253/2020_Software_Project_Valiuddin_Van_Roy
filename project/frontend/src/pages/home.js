@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
 import firebase from "firebase";
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import "../App.css";
 
 export class home extends Component {
   state = {

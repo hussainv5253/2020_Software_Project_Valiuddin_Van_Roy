@@ -1,0 +1,30 @@
+form {
+  position: absolute center;
+  bottom: 0;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input[name="city"],
+form input[name="country"] {
+  color: black;
+  border: none;
+  justify-content: center;
+  border-bottom: 2px solid white;
+  border-radius: 0;
+}
+
+form input:focus {
+  background-color: transparent;
+  box-shadow: none !important;
+  border: none;
+  border-bottom: 2px solid tomato;
+  justify-content: center;
+}
+
+form input .container::-webkit-input-placeholder {
+  color: white !important;
+  justify-content: center;
+}
